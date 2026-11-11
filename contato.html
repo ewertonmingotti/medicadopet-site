@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contato — Médica do Pet</title>
+<meta name="description" content="Fale com a Médica do Pet: atendimento para tutores, parcerias com marcas ou dúvidas gerais sobre a Dra. Jhennifer Espírito Santo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .tabs{ display:flex; gap:10px; flex-wrap:wrap; margin-bottom:36px; }
+  .tab-btn{
+    padding:12px 20px; border-radius:999px; border:1.5px solid var(--line); background:#fff;
+    font-weight:600; font-size:.92rem; cursor:pointer; color:var(--ink-soft);
+  }
+  .tab-btn.active{ background:var(--green-deep); border-color:var(--green-deep); color:#fff; }
+  .tab-panel{ display:none; }
+  .tab-panel.active{ display:block; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html"><span class="dot">MP</span><span>médica do pet<small>Medicina Veterinária Integrativa</small></span></a>
+    <button class="nav-toggle" aria-label="Abrir menu" onclick="document.querySelector('.nav-links').classList.toggle('open')"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="index.html">Início</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="atendimento-presencial.html">Presencial</a>
+      <a href="atendimento-online.html">Online</a>
+      <a href="saude-na-tigela.html">Saúde na Tigela</a>
+      <a href="conteudo.html">Conteúdo</a>
+      <a href="para-marcas.html">Marcas</a>
+      <a class="current" href="contato.html">Contato</a>
+      <div class="nav-cta">
+        <a class="btn btn-outline on-light" href="https://wa.me/5511956023130" target="_blank" rel="noopener">WhatsApp direto</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" style="padding-bottom:24px;">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Início</a> / Contato</div>
+      <div class="two-col" style="align-items:flex-start;">
+        <div>
+          <span class="eyebrow">Fale com a Médica do Pet</span>
+          <h1 style="max-width:560px;">Cada público tem um caminho — escolha o seu.</h1>
+          <p class="lede">Tutor, marca ou só curioso: o formulário certo chega mais rápido a quem precisa responder.</p>
+        </div>
+        <div class="hero-photo" style="aspect-ratio:4/5; max-width:320px;"><img src="assets/jhennifer-headshot-contato.jpg" alt="Dra. Jhennifer Espírito Santo sorrindo"></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="container">
+      <div class="tabs">
+        <button class="tab-btn" data-tab="tutor">Sou tutor</button>
+        <button class="tab-btn" data-tab="marca">Sou uma marca</button>
+        <button class="tab-btn" data-tab="geral">Quero saber mais</button>
+      </div>
+
+      <!-- TUTOR -->
+      <div class="tab-panel" id="panel-tutor">
+        <div class="two-col">
+          <div>
+            <span class="eyebrow">Sou tutor</span>
+            <h2>Quero atendimento para o meu pet.</h2>
+            <p class="lede">Conte um pouco do caso e a equipe te orienta entre presencial (fisiatria/clínica) ou online (nutrição/naturopatia).</p>
+          </div>
+          <form class="card" id="form-tutor">
+            <div class="form-grid">
+              <div><label>Seu nome</label><input type="text" id="t-nome" required></div>
+              <div><label>Nome do pet</label><input type="text" id="t-pet"></div>
+              <div><label>Tipo de atendimento</label>
+                <select id="t-tipo">
+                  <option value="Presencial (fisiatria)">Presencial — fisiatria</option>
+                  <option value="Presencial (clínica médica)">Presencial — clínica médica</option>
+                  <option value="Online (nutrição/naturopatia)">Online — nutrição / naturopatia</option>
+                  <option value="Não sei ainda">Não sei ainda</option>
+                </select>
+              </div>
+              <div><label>Conte o que está acontecendo</label><textarea id="t-msg" rows="4"></textarea></div>
+              <button class="btn btn-primary btn-block" type="submit">Enviar pelo WhatsApp</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- MARCA -->
+      <div class="tab-panel" id="panel-marca">
+        <div class="two-col">
+          <div>
+            <span class="eyebrow">Sou uma marca</span>
+            <h2>Quero falar sobre parceria.</h2>
+            <p class="lede">Conte sobre a marca e o tipo de formato que faz sentido — Reel, carrossel, embaixadoria ou projeto sob medida.</p>
+            <a class="btn btn-outline on-light" href="para-marcas.html">Ver formatos de parceria</a>
+          </div>
+          <form class="card" id="form-marca">
+            <div class="form-grid">
+              <div><label>Marca / empresa</label><input type="text" id="m-empresa" required></div>
+              <div><label>Nome do contato</label><input type="text" id="m-nome" required></div>
+              <div><label>E-mail</label><input type="email" id="m-email" required></div>
+              <div><label>Formato de interesse</label>
+                <select id="m-formato">
+                  <option>Reel Dedicado</option>
+                  <option>Reel de Integração Natural</option>
+                  <option>Carrossel Educativo</option>
+                  <option>Sequência de Stories</option>
+                  <option>Live Integrada</option>
+                  <option>Projeto Integrado</option>
+                  <option>Embaixadoria Mensal</option>
+                  <option>Ainda não sei</option>
+                </select>
+              </div>
+              <div><label>Mensagem</label><textarea id="m-msg" rows="3"></textarea></div>
+              <button class="btn btn-dark btn-block" type="submit">Enviar proposta</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- GERAL -->
+      <div class="tab-panel" id="panel-geral">
+        <div class="two-col">
+          <div>
+            <span class="eyebrow">Quero saber mais</span>
+            <h2>Dúvidas gerais, imprensa ou outros assuntos.</h2>
+            <p class="lede">Se não for atendimento nem parceria comercial, este é o canal certo.</p>
+          </div>
+          <form class="card" id="form-geral">
+            <div class="form-grid">
+              <div><label>Seu nome</label><input type="text" id="g-nome" required></div>
+              <div><label>E-mail</label><input type="email" id="g-email" required></div>
+              <div><label>Mensagem</label><textarea id="g-msg" rows="4" required></textarea></div>
+              <button class="btn btn-primary btn-block" type="submit">Enviar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band-mist">
+    <div class="container">
+      <div class="grid grid-3">
+        <div class="card" style="background:#fff;"><h3>E-mail</h3><p><a href="mailto:veterinaria.jhennifer@gmail.com">veterinaria.jhennifer@gmail.com</a></p></div>
+        <div class="card" style="background:#fff;"><h3>WhatsApp comercial</h3><p><a href="https://wa.me/5511956023130" target="_blank" rel="noopener">(11) 95602-3130</a></p></div>
+        <div class="card" style="background:#fff;"><h3>Instagram</h3><p><a href="https://instagram.com/medicadopet" target="_blank" rel="noopener">@medicadopet</a></p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="color:#fff; margin-bottom:12px;"><span class="dot" style="background:var(--terracotta);">MP</span><span>médica do pet</span></div>
+        <p style="color:rgba(251,248,243,.7); font-size:.92rem; max-width:280px;">Dra. Jhennifer Espírito Santo — Medicina Veterinária Integrativa.</p>
+      </div>
+      <div>
+        <h4>Atendimento</h4>
+        <a href="atendimento-presencial.html">Presencial</a>
+        <a href="atendimento-online.html">Online</a>
+        <a href="saude-na-tigela.html">Saúde na Tigela</a>
+      </div>
+      <div>
+        <h4>Marca</h4>
+        <a href="sobre.html">Sobre</a>
+        <a href="conteudo.html">Conteúdo</a>
+        <a href="para-marcas.html">Marcas</a>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <a href="mailto:veterinaria.jhennifer@gmail.com">veterinaria.jhennifer@gmail.com</a>
+        <a href="https://wa.me/5511956023130">WhatsApp comercial</a>
+        <a href="https://instagram.com/medicadopet">@medicadopet</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Médica do Pet — Dra. Jhennifer Espírito Santo</span>
+      <span>Medicina Veterinária Integrativa</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var tabs = document.querySelectorAll('.tab-btn');
+  var panels = { tutor: document.getElementById('panel-tutor'), marca: document.getElementById('panel-marca'), geral: document.getElementById('panel-geral') };
+  function activate(name){
+    tabs.forEach(function(b){ b.classList.toggle('active', b.dataset.tab === name); });
+    Object.keys(panels).forEach(function(k){ panels[k].classList.toggle('active', k === name); });
+  }
+  tabs.forEach(function(b){ b.addEventListener('click', function(){ activate(b.dataset.tab); history.replaceState(null,'','#'+b.dataset.tab); }); });
+  var initial = (location.hash || '#tutor').replace('#','');
+  if(!panels[initial]) initial = 'tutor';
+  activate(initial);
+
+  document.getElementById('form-tutor').addEventListener('submit', function(e){
+    e.preventDefault();
+    var msg = 'Olá! Sou tutor(a) e quero atendimento.\nNome: '+document.getElementById('t-nome').value+'\nPet: '+document.getElementById('t-pet').value+'\nTipo de atendimento: '+document.getElementById('t-tipo').value+'\nMensagem: '+document.getElementById('t-msg').value;
+    window.open('https://wa.me/5511956023130?text='+encodeURIComponent(msg), '_blank');
+  });
+  document.getElementById('form-marca').addEventListener('submit', function(e){
+    e.preventDefault();
+    var msg = 'Olá! Represento a marca '+document.getElementById('m-empresa').value+' e quero falar sobre parceria.\nContato: '+document.getElementById('m-nome').value+'\nE-mail: '+document.getElementById('m-email').value+'\nFormato de interesse: '+document.getElementById('m-formato').value+'\nMensagem: '+document.getElementById('m-msg').value;
+    window.open('https://wa.me/5511956023130?text='+encodeURIComponent(msg), '_blank');
+  });
+  document.getElementById('form-geral').addEventListener('submit', function(e){
+    e.preventDefault();
+    var subject = encodeURIComponent('Contato pelo site — Médica do Pet');
+    var body = encodeURIComponent('Nome: '+document.getElementById('g-nome').value+'\nE-mail: '+document.getElementById('g-email').value+'\n\n'+document.getElementById('g-msg').value);
+    window.location.href = 'mailto:veterinaria.jhennifer@gmail.com?subject='+subject+'&body='+body;
+  });
+</script>
+
+</body>
+</html>
